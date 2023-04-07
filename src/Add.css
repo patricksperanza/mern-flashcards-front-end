@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field {
+  margin-top: 40px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+textarea {
+  display: block;
+  width: 280px;
+  background: rgb(32, 35, 57);
+  color: white;
+  font-size: 1rem;
+}
+
+.question-area {
+  height: 80px;
+}
+
+.answer-area {
+  height: 220px;
+}

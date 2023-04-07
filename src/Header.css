@@ -1,0 +1,13 @@
+.header {
+  border-bottom: 3px solid #5cc8ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10%;
+  font-size: 1rem;
+}
+
+.add-button {
+  width: 20px;
+  color: white;
+}
