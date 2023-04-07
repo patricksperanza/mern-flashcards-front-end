@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <div className="header">
       <div className="invisible"></div>
-      <h1>New Card</h1>
-      <Link to={"../menu"}>
+      <h1>Menu</h1>
+      <Link to={"../deck"}>
         <AiOutlineClose className="button" />
       </Link>
     </div>

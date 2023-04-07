@@ -5,6 +5,7 @@ import App from "./App"
 import Home from "./pages/Home"
 import Add from "./pages/Add"
 import Deck from "./pages/Deck"
+import Menu from "./pages/Menu"
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/deck",
         element: <Deck />,
+      },
+      {
+        path: "/menu",
+        element: <Menu />,
       },
     ],
   },

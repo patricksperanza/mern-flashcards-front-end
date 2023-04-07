@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { BiMessageSquareAdd } from "react-icons/bi"
+import { GiHamburgerMenu } from "react-icons/gi"
 import { AiOutlineHome } from "react-icons/ai"
 
 import "./Header.css"
@@ -12,8 +12,8 @@ const DeckHeader = () => {
         <AiOutlineHome className="button" />
       </Link>
       <h1>Flashcards</h1>
-      <Link to={"../add"}>
-        <BiMessageSquareAdd className="button" />
+      <Link to={"../menu"}>
+        <GiHamburgerMenu className="button" />
       </Link>
     </div>
   )
