@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="invisible"></div>
-      <h1>Flashcards</h1>
+      <h1>Front End Flashcards</h1>
       <Link to={"add"}>
         <BiMessageSquareAdd className="add-button" />
       </Link>
