@@ -18,7 +18,7 @@ const App = () => {
     <div>
       <Header />
       <Card questionData={questionData} />
-      <QuestionList questionData={questionData} />
+      {/* <QuestionList questionData={questionData} /> */}
     </div>
   )
 }
