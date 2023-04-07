@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("https://git.heroku.com/mern-flashcards-app.git/flashcards")
+      .get("https://mern-flashcards-app.herokuapp.com/flashcards")
       .then((res) => setQuestionData(res.data))
   }, [])
 

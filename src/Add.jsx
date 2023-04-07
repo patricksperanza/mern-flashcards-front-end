@@ -44,7 +44,7 @@ const Add = () => {
             console.log(formData)
             axios
               .post(
-                "https://git.heroku.com/mern-flashcards-app.git/flashcards",
+                "https://mern-flashcards-app.herokuapp.com/flashcards",
                 formData
               )
               .then((res) => console.log(res.data))
