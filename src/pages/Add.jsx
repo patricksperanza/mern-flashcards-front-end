@@ -1,8 +1,8 @@
 import { useState } from "react"
 import axios from "axios"
-import Button from "./Button"
+import Button from "../components/Button"
 import "./Add.css"
-import AddHeader from "./AddHeader"
+import AddHeader from "../components/AddHeader"
 
 const Add = () => {
   const [formData, setFormData] = useState({

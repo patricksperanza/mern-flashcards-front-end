@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
-import axios from "axios"
+import { useOutletContext } from "react-router-dom"
+
 import Button from "./Button"
 
 import "./Card.css"
 
-const Card = ({ questionData }) => {
+const Card = () => {
+  const [questionData, setQuestionData] = useOutletContext()
   const [question, setQuestion] = useState({
     question: "Welcome",
     answer: "Click New Question",

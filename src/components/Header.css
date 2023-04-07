@@ -4,10 +4,15 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 10%;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
-.add-button {
+.button {
   width: 20px;
+  height: 20px;
   color: white;
+}
+
+.home-header {
+  justify-content: center;
 }

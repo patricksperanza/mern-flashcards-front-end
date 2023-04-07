@@ -1,9 +1,7 @@
-import Header from "./Header"
-import Card from "./Card"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Outlet } from "react-router-dom"
 import "./App.css"
-import QuestionList from "./QuestionList"
 
 const App = () => {
   const [questionData, setQuestionData] = useState([])
@@ -16,9 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <Header />
-      <Card questionData={questionData} />
-      {/* <QuestionList questionData={questionData} /> */}
+      <Outlet context={[questionData, setQuestionData]} />
     </div>
   )
 }
