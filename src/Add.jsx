@@ -43,7 +43,10 @@ const Add = () => {
             e.preventDefault()
             console.log(formData)
             axios
-              .post("http://localhost:5000/flashcards", formData)
+              .post(
+                "https://git.heroku.com/mern-flashcards-app.git/flashcards",
+                formData
+              )
               .then((res) => console.log(res.data))
 
             setFormData({ question: "", answer: "" })
