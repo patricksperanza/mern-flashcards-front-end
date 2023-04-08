@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import Add from "./pages/Add"
 import Deck from "./pages/Deck"
 import Menu from "./pages/Menu"
+import EditCard from "./pages/EditCard"
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <Menu />,
+      },
+      {
+        path: "/update",
+        element: <EditCard />,
       },
     ],
   },

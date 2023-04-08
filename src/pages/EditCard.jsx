@@ -2,19 +2,20 @@ import { useState } from "react"
 import axios from "axios"
 import Button from "../components/Button"
 import "./Add.css"
-import AddHeader from "../components/AddHeader"
-import { useOutletContext } from "react-router-dom"
+import EditHeader from "../components/EditHeader"
+import { Link, useOutletContext, useLocation } from "react-router-dom"
 
-const Add = () => {
+const Edit = () => {
   const [questionData, setQuestionData] = useOutletContext()
+  const location = useLocation()
   const [formData, setFormData] = useState({
-    question: "",
-    answer: "",
+    question: location.state.question,
+    answer: location.state.answer,
   })
 
   return (
     <>
-      <AddHeader />
+      <EditHeader />
       <form className="form">
         <div className="form-field">
           <label htmlFor="question">Question</label>
@@ -46,23 +47,23 @@ const Add = () => {
             console.log(formData)
             axios
               .post(
-                "https://mern-flashcards-app.herokuapp.com/flashcards",
+                "https://mern-flashcards-app.herokuapp.com/flashcards/update/" +
+                  location.state.id,
                 formData
               )
               .then((res) => {
                 console.log(res.data)
+
                 axios
                   .get("https://mern-flashcards-app.herokuapp.com/flashcards")
                   .then((res) => setQuestionData(res.data))
               })
-
-            setFormData({ question: "", answer: "" })
           }}
-          text="Submit"
+          text="Save"
         />
       </form>
     </>
   )
 }
 
-export default Add
+export default Edit

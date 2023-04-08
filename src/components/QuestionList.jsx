@@ -15,7 +15,9 @@ const QuestionList = () => {
       .delete("https://mern-flashcards-app.herokuapp.com/flashcards/" + id)
       .then((res) => {
         console.log(res.data)
-        setQuestionData(questionData.filter((question) => question._id !== id))
+        axios
+          .get("https://mern-flashcards-app.herokuapp.com/flashcards")
+          .then((res) => setQuestionData(res.data))
       })
       .catch((err) => console.log(err))
   }
@@ -36,7 +38,13 @@ const QuestionList = () => {
                 <p className="list-answer">{q.answer}</p>
               </div>
               <div className="edit-btns">
-                <AiOutlineEdit className="btn" />
+                <Link
+                  to="/update"
+                  className="btn"
+                  state={{ question: q.question, answer: q.answer, id: q._id }}
+                >
+                  <AiOutlineEdit />
+                </Link>
                 <BsTrash3
                   className="btn"
                   onClick={() => deleteQuestion(q._id)}
