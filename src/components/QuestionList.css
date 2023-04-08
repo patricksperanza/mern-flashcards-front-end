@@ -1,11 +1,18 @@
 .container {
   display: block;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 550px;
 }
-.container h3 {
-  text-align: center;
-  text-decoration: underline;
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+}
+
+.question-text {
+  max-width: 400px;
+  padding-left: 12px;
 }
 
 .list-question {
@@ -15,6 +22,24 @@
 
 .list-answer {
   font-size: 0.7rem;
+}
+
+.edit-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-right: 12px;
+}
+
+.btn {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.btn:hover {
+  color: #bbb;
 }
 
 .button-22 {
@@ -59,7 +84,7 @@
 }
 
 .add-btn {
-  margin: auto;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
   height: 40px;

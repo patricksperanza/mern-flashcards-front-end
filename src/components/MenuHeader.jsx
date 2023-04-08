@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="invisible"></div>
-      <h1>Menu</h1>
+      <h1>Questions</h1>
       <Link to={"../deck"}>
         <AiOutlineClose className="button" />
       </Link>
