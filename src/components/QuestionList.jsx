@@ -12,9 +12,10 @@ const QuestionList = () => {
   const deleteQuestion = (id) => {
     console.log(id)
     axios
-      .delete("https://mern-flashcards-app.herokuapp.com/flashcards" + id)
+      .delete("https://mern-flashcards-app.herokuapp.com/flashcards/" + id)
       .then((res) => {
         console.log(res.data)
+        setQuestionData(questionData.filter((question) => question._id !== id))
       })
       .catch((err) => console.log(err))
   }
