@@ -5,7 +5,7 @@
   border: 2px solid rgb(99, 99, 99);
   border-radius: 5px;
   margin: 25px auto;
-  padding: 10px;
+  padding: 8px;
   background: rgb(32, 35, 57);
   position: relative;
 }
@@ -23,45 +23,7 @@
   padding: 25px 0 10px 0;
 }
 
-.button-22 {
-  align-items: center;
-  appearance: button;
-  background-color: #0276ff;
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  /* flex-shrink: 0; */
-  font-family: "RM Neue", sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  padding: 10px 21px;
-  text-align: center;
-  text-transform: none;
-  transition: color 0.13s ease-in-out, background 0.13s ease-in-out,
-    opacity 0.13s ease-in-out, box-shadow 0.13s ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  justify-content: center;
-  width: 280px;
-}
-
-.button-22:active {
-  background-color: #006ae8;
-}
-
-.button-22:hover {
-  background-color: #1c84ff;
-}
-
 .card-btns {
-  /* display: flex; */
   position: absolute;
   bottom: 5px;
 }
