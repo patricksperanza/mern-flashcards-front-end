@@ -10,7 +10,7 @@ const App = () => {
     axios
       .get("https://mern-flashcards-app.herokuapp.com/flashcards")
       .then((res) => setQuestionData(res.data))
-  }, [])
+  }, [questionData])
 
   return (
     <div>

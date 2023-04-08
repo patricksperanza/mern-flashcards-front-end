@@ -3,8 +3,10 @@ import axios from "axios"
 import Button from "../components/Button"
 import "./Add.css"
 import AddHeader from "../components/AddHeader"
+import { useOutletContext } from "react-router-dom"
 
 const Add = () => {
+  const [questionData, setQuestionData] = useOutletContext()
   const [formData, setFormData] = useState({
     question: "",
     answer: "",
@@ -47,7 +49,13 @@ const Add = () => {
                 "https://mern-flashcards-app.herokuapp.com/flashcards",
                 formData
               )
-              .then((res) => console.log(res.data))
+              .then((res) => {
+                console.log(res.data)
+                setQuestionData([
+                  ...questionData,
+                  { question: formData.question, answer: formData.answer },
+                ])
+              })
 
             setFormData({ question: "", answer: "" })
           }}
