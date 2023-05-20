@@ -7,6 +7,7 @@ import Add from "./pages/Add"
 import Deck from "./pages/Deck"
 import Menu from "./pages/Menu"
 import EditCard from "./pages/EditCard"
+import { AuthContextProvider } from "./context/authContext"
 
 const router = createBrowserRouter([
   {
@@ -38,5 +39,7 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AuthContextProvider>
+    <RouterProvider router={router} />
+  </AuthContextProvider>
 )
