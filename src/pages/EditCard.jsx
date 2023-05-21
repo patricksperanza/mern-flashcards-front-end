@@ -45,7 +45,7 @@ const Edit = () => {
         <Button
           onClick={async (e) => {
             e.preventDefault()
-            console.log(formData)
+
             // verify auth
             if (!user) {
               throw Error("You must be logged in")
@@ -76,7 +76,7 @@ const Edit = () => {
               }
             )
             const data = await response.json()
-            console.log(data)
+
             setQuestionData(data)
             // setFormData({ question: "", answer: "" })
           }}

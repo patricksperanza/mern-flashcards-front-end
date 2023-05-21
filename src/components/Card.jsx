@@ -7,7 +7,6 @@ import "./Card.css"
 
 const Card = () => {
   const [questionData, setQuestionData] = useOutletContext()
-  console.log(questionData)
   const [question, setQuestion] = useState({
     question: "Welcome",
     answer: "Click New Question",

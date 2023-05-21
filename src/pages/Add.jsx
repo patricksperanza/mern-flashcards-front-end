@@ -73,7 +73,7 @@ const Add = () => {
               }
             )
             const data = await response.json()
-            console.log(data)
+
             setQuestionData(data)
             setFormData({ question: "", answer: "" })
           }}

@@ -35,7 +35,6 @@ const QuestionList = () => {
       }
     )
     const data = await response.json()
-    console.log(data)
     setQuestionData(data)
   }
   return (

@@ -1,15 +1,22 @@
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useLogout } from "../hooks/useLogout"
 import { Link } from "react-router-dom"
+import { useLogin } from "../hooks/useLogin"
 import HomeHeader from "../components/HomeHeader"
 import "./Home.css"
 
 const Home = () => {
   const { user } = useAuthContext()
   const { logout } = useLogout()
+  const { login, error, isLoading } = useLogin()
 
-  const handleClick = () => {
+  const handleLogout = () => {
     logout()
+  }
+
+  const guestLogin = (e) => {
+    e.preventDefault()
+    login("guest@guest.com", "Guest123!")
   }
 
   return (
@@ -28,7 +35,7 @@ const Home = () => {
               <Link to="/deck">
                 <h6 className="link">Go to Cards</h6>
               </Link>
-              <h6 className="link" onClick={handleClick}>
+              <h6 className="link" onClick={handleLogout}>
                 Log Out
               </h6>
             </div>
@@ -43,10 +50,10 @@ const Home = () => {
                 <h6 className="link">Login</h6>
               </Link>
             </div>
-            <div className="guest-info">
-              <p>Guest Login: </p>
-              <p>username: guest@guest.com </p>
-              <p>password: Guest123!</p>
+            <div>
+              <h6 className="link guest-info" onClick={guestLogin}>
+                Guest Account
+              </h6>
             </div>
           </>
         )}
