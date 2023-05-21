@@ -10,11 +10,14 @@ export const useSignup = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch("http://localhost:5000/user/signup", {
-      method: "POST",
-      headers: { "CONTENT-TYPE": "application/json" },
-      body: JSON.stringify({ email, password }),
-    })
+    const response = await fetch(
+      "https://mern-flashcards-app.herokuapp.com/user/signup",
+      {
+        method: "POST",
+        headers: { "CONTENT-TYPE": "application/json" },
+        body: JSON.stringify({ email, password }),
+      }
+    )
 
     const json = await response.json()
 
