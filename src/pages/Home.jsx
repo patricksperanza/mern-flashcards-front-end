@@ -41,6 +41,9 @@ const Home = () => {
             <Link to="/login">
               <h6 className="link">Login</h6>
             </Link>
+            <p>*to login as a guest: </p>
+            <p>username: guest</p>username: guest@guest.com{" "}
+            <p>password: Guest123!</p>
           </div>
         )}
       </div>
