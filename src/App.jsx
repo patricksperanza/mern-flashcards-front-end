@@ -11,11 +11,14 @@ const App = () => {
 
   useEffect(() => {
     const fetchFlashcards = async () => {
-      const response = await fetch("http://localhost:5000/flashcards", {
-        headers: {
-          Authorization: `Bearer: ${user.token}`,
-        },
-      })
+      const response = await fetch(
+        "https://mern-flashcards-app.herokuapp.com/flashcards",
+        {
+          headers: {
+            Authorization: `Bearer: ${user.token}`,
+          },
+        }
+      )
       const data = await response.json()
       console.log(data)
       setQuestionData(data)

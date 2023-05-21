@@ -54,7 +54,8 @@ const Edit = () => {
 
             // post the new flashcard
             await fetch(
-              "http://localhost:5000/flashcards/update/" + location.state.id,
+              "https://mern-flashcards-app.herokuapp.com/flashcards/update/" +
+                location.state.id,
               {
                 method: "POST",
                 body: JSON.stringify(formData),
@@ -66,11 +67,14 @@ const Edit = () => {
             )
 
             // get flashcards
-            const response = await fetch("http://localhost:5000/flashcards", {
-              headers: {
-                Authorization: `Bearer: ${user.token}`,
-              },
-            })
+            const response = await fetch(
+              "https://mern-flashcards-app.herokuapp.com/flashcards",
+              {
+                headers: {
+                  Authorization: `Bearer: ${user.token}`,
+                },
+              }
+            )
             const data = await response.json()
             console.log(data)
             setQuestionData(data)
