@@ -27,3 +27,9 @@
   display: flex;
   gap: 10px;
 }
+
+.guest-info {
+  margin-top: 70px;
+  text-align: left;
+  color: rgb(178, 178, 178);
+}

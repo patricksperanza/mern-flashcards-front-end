@@ -34,17 +34,21 @@ const Home = () => {
             </div>
           </>
         ) : (
-          <div className="btns">
-            <Link to="/signup">
-              <h6 className="link">Sign Up</h6>
-            </Link>
-            <Link to="/login">
-              <h6 className="link">Login</h6>
-            </Link>
-            <p>*to login as a guest: </p>
-            <p>username: guest</p>username: guest@guest.com{" "}
-            <p>password: Guest123!</p>
-          </div>
+          <>
+            <div className="btns">
+              <Link to="/signup">
+                <h6 className="link">Sign Up</h6>
+              </Link>
+              <Link to="/login">
+                <h6 className="link">Login</h6>
+              </Link>
+            </div>
+            <div className="guest-info">
+              <p>Guest Login: </p>
+              <p>username: guest@guest.com </p>
+              <p>password: Guest123!</p>
+            </div>
+          </>
         )}
       </div>
     </>
