@@ -1,25 +1,29 @@
 .main {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 40px;
-}
-
-.main p {
-  font-size: 0.8rem;
 }
 
 .link {
   margin: auto;
   border: 1px solid grey;
-  width: 65%;
+  width: 120px;
   padding: 10px 0;
   border-radius: 3px;
   color: white;
   text-decoration: none;
   max-width: 200px;
-  margin-top: 40px;
+  margin-top: 20px;
   background: #000d28;
 }
 
 .link:hover {
   background: #6d9bff;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
 }

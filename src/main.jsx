@@ -7,7 +7,10 @@ import Add from "./pages/Add"
 import Deck from "./pages/Deck"
 import Menu from "./pages/Menu"
 import EditCard from "./pages/EditCard"
-import { AuthContextProvider } from "./context/authContext"
+import Login from "./pages/Login"
+import SignUp from "./pages/SignUp"
+
+import { AuthContextProvider } from "./context/AuthContext"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
       {
         path: "/add",

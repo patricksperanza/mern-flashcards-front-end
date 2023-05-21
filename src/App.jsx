@@ -1,16 +1,30 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
 import { Outlet } from "react-router-dom"
 import "./App.css"
+import { useAuthContext } from "./hooks/useAuthContext"
 
 const App = () => {
   const [questionData, setQuestionData] = useState([])
+  const { user } = useAuthContext()
+
+  // heroku link: "https://mern-flashcards-app.herokuapp.com/flashcards"
 
   useEffect(() => {
-    axios
-      .get("https://mern-flashcards-app.herokuapp.com/flashcards")
-      .then((res) => setQuestionData(res.data))
-  }, [])
+    const fetchFlashcards = async () => {
+      const response = await fetch("http://localhost:5000/flashcards", {
+        headers: {
+          Authorization: `Bearer: ${user.token}`,
+        },
+      })
+      const data = await response.json()
+      console.log(data)
+      setQuestionData(data)
+    }
+
+    if (user) {
+      fetchFlashcards()
+    }
+  }, [user])
 
   return (
     <div>

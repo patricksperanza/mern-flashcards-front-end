@@ -4,22 +4,36 @@ import "./QuestionList.css"
 import { AiOutlinePlus, AiOutlineEdit } from "react-icons/ai"
 import { BsTrash3 } from "react-icons/bs"
 import { Link } from "react-router-dom"
-import axios from "axios"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 const QuestionList = () => {
+  const { user } = useAuthContext()
   const [questionData, setQuestionData] = useOutletContext()
 
-  const deleteQuestion = (id) => {
-    console.log(id)
-    axios
-      .delete("https://mern-flashcards-app.herokuapp.com/flashcards/" + id)
-      .then((res) => {
-        console.log(res.data)
-        axios
-          .get("https://mern-flashcards-app.herokuapp.com/flashcards")
-          .then((res) => setQuestionData(res.data))
-      })
-      .catch((err) => console.log(err))
+  const deleteQuestion = async (id) => {
+    // verify auth
+    if (!user) {
+      throw Error("You must be logged in")
+      return
+    }
+
+    // post the new flashcard
+    await fetch("http://localhost:5000/flashcards/" + id, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer: ${user.token}`,
+      },
+    })
+
+    // get flashcards
+    const response = await fetch("http://localhost:5000/flashcards", {
+      headers: {
+        Authorization: `Bearer: ${user.token}`,
+      },
+    })
+    const data = await response.json()
+    console.log(data)
+    setQuestionData(data)
   }
   return (
     <div className="container">

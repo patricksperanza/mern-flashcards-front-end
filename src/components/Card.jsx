@@ -7,6 +7,7 @@ import "./Card.css"
 
 const Card = () => {
   const [questionData, setQuestionData] = useOutletContext()
+  console.log(questionData)
   const [question, setQuestion] = useState({
     question: "Welcome",
     answer: "Click New Question",
@@ -15,6 +16,13 @@ const Card = () => {
 
   const getNewQuestion = (e) => {
     e.stopPropagation()
+    if (questionData.length === 0) {
+      setQuestion({
+        question: "Welcome",
+        answer: "You must add new cards first!",
+      })
+      return
+    }
     if (!displayAnswer) return
     const i = Math.floor(Math.random() * questionData.length)
     setQuestion(questionData[i])
